@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "grille.h"
+#include "grille.c"
 
 int main()
 {
@@ -8,12 +9,16 @@ int main()
 //test branche
     int nbCols;
     int nbRows;
+    int nbMines;
 
     printf("nb lignes ? \n");
     scanf("%d",&nbRows);
 
     printf("nb colonnes ? \n");
     scanf("%d",&nbCols);
+
+        printf("nb mines ? \n");
+    scanf("%d",&nbMines);
 
     if(nbRows >= 0 && nbRows < 32)
     {
@@ -26,7 +31,7 @@ int main()
             {      
                 for(c = 0; c < nbCols; c++)
                 {
-                    insertion(maGrille, r, c, 'n',isMined());
+                    insertion(maGrille, r, c, 'n',isMined(nbCols));
                 }                
             }
 
@@ -38,6 +43,8 @@ int main()
         printf("Erreur dans le nombre de lignes et de colonnes, au revoir !");
         exit(0);
     }
+    
+    
     return 0;
 
 }

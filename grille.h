@@ -1,5 +1,5 @@
-#include "grille.h"
-
+#ifndef GRILLE_H
+#define GRILLE_H
 
 typedef struct Element Element;
 struct Element
@@ -20,8 +20,11 @@ struct Liste
     Element *premier;
 };
 
-int isMined();
+int isMined(int nbCol);
 Liste *initialisation(int _nbRow, int _nbCol);
 void insertion(Liste *liste, int _row, int _col, char _statut, int _mine);
 void suppression(Liste *liste);
 void afficherGrille(Liste *liste);
+
+void insertionMines(Liste *liste, int nbmines);
+#endif

@@ -26,12 +26,19 @@ Liste *initialisation(int _nbRow, int _nbCol)
     return liste;
 }
 
-int isMined()
+int isMined(int nb)
 {
-    srand(time(NULL)); // Init rand avec le le nombre de secondes écoulées depuis le premier janvier 1970 au moment du lancement
     
-    int random = rand() % 2;
-    return random;
+    int random = rand()%nb;
+
+    if (random>0)
+    {
+        return 0 ; //vide
+    }
+    else
+    {
+    return 1; //bombe 
+    }
 }
 
 void insertion(Liste *liste, int _row, int _col, char _statut, int _mine)
@@ -54,13 +61,30 @@ void insertion(Liste *liste, int _row, int _col, char _statut, int _mine)
     liste->nbCases++;
 }
 
-void suppression(Liste *liste)
-{
+void insertionMines(Liste *liste, int nbmines)
+{ 
     if(liste == NULL)
     {
         exit(EXIT_FAILURE);
     }
 
+    Element *tmp = liste->premier; //premier element 
+
+    while(tmp != NULL)
+    {
+        if(nbmines > 0)
+        {
+            tmp->mine = rand()%(liste->nbRow);
+            nbmines--;
+        }
+        tmp = tmp-> suivant;
+    }
+    
+}
+
+void suppression(Liste *liste)
+{
+   
     if(liste->premier != NULL)
     {
         Element *aSupprimer = liste->premier;
