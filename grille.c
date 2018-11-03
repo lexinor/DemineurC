@@ -41,6 +41,42 @@ int isMined(int nb)
     }
 }
 
+int calculAdjacences(Liste *liste, int _row, int _col)
+{
+    int compteur =0 ;
+    Element *actuel = liste->premier; 
+    
+    while(actuel != NULL)
+    {    //si une case d'adjacence est detectée
+        if( (actuel->row == (_row-1) && actuel->col == (_col-1) ) || (actuel->row == (_row-1) && actuel->col == (_col)) ||  (actuel->row == (_row-1) && actuel->col == (_col+1)) ||
+          (actuel->row == (_row) && actuel->col == (_col-1))  ||  (actuel->row == (_row) && actuel->col == (_col+1)) ||  (actuel->row == (_row+1) && actuel->col == (_col-1)) || 
+          (actuel->row == (_row+1) && actuel->col == (_col)) || (actuel->row == (_row+1) && actuel->col == (_col+1)) )
+                {
+                    if (actuel->mine = 1) // si elle est minée alors on incrémente le compteur d'adjacence
+                        {
+                            compteur++; 
+                        }
+                } 
+        actuel = actuel -> suivant; //on test la case suivante ...
+    }
+
+     Element *ajout = liste->premier;  // on met à jour la case concernée 
+
+    while(ajout != NULL)
+    {
+        if (ajout->row == _row && ajout->col == _col )
+        {
+            ajout->nbAdjacences = compteur; //en renseignant l'attribut nbadjacences avec le compteur
+        }
+         ajout = ajout -> suivant;
+    }
+
+    return compteur;
+}
+
+
+
+
 void insertion(Liste *liste, int _row, int _col, char _statut, int _mine)
 {
     /* Création du nouvelle case */
@@ -104,7 +140,7 @@ void afficherGrille(Liste *liste)
     int compteur = liste->nbCases;
     while(actuel != NULL)
     {
-        printf("case %d , ligne : %d // col : %d // statut : %c // isMined : %d\n \n", compteur, actuel->row, actuel->col, actuel->statut, actuel->mine);
+        printf("case %d , ligne : %d // col : %d // statut : %c // isMined : %d // adjacences : %d\n \n", compteur, actuel->row, actuel->col, actuel->statut, actuel->mine, actuel->nbAdjacences);
         actuel = actuel->suivant;
         compteur--;
     }

@@ -32,9 +32,12 @@ int main()
                 for(c = 0; c < nbCols; c++)
                 {
                     insertion(maGrille, r, c, 'n',isMined(nbCols));
+                    calculAdjacences(maGrille, nbRows, nbCols);
+
+                  
+
                 }                
             }
-
             afficherGrille(maGrille);
         }
     }
