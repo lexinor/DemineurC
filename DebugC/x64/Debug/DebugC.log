@@ -1,0 +1,6 @@
+﻿  grille.c
+  jeu.c
+  main.c
+c:\users\lexinor\source\repos\debugc\debugc\main.c(11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Génération de code en cours...
+  DebugC.vcxproj -> C:\Users\Lexinor\source\repos\DebugC\x64\Debug\DemineurC.exe
