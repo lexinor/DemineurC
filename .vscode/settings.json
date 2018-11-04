@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "stdio.h": "c",
-        "grille.h": "c",
-        "stdlib.h": "c"
-    }
-}

@@ -1,0 +1,6 @@
+﻿  grille.c
+c:\users\lexinor\source\repos\debugc\debugc\grille.c(123): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+  c:\users\lexinor\source\repos\debugc\debugc\grille.c(123): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+c:\users\lexinor\source\repos\debugc\debugc\grille.c(128): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+  c:\users\lexinor\source\repos\debugc\debugc\grille.c(128): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+  DebugC.vcxproj -> C:\Users\Lexinor\source\repos\DebugC\Debug\DebugC.exe

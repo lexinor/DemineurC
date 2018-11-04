@@ -8,7 +8,7 @@
 
 int main()
 {
-	srand(time(NULL)); // Init rand avec le le nombre de secondes Ã©coulÃ©es depuis le premier janvier 1970 au moment du lancement
+	srand(time(NULL)); // Init rand avec le le nombre de secondes écoulées depuis le premier janvier 1970 au moment du lancement
 	printf("--------------------- DEMINEUR ---------------------\n");
 
 	int nbCols;
@@ -25,10 +25,10 @@ int main()
 		if (nbCols > 0 && nbCols <= GRILLEMAX)
 		{
 			Liste *maGrille = initialisation(nbRows, nbCols); // Initialisation de la grille
-			remplissageGrille(nbRows, nbCols, maGrille); // On crÃ©er une grille de la taille donnÃ©e
+			remplissageGrille(nbRows, nbCols, maGrille); // On créer une grille de la taille donnée
 			printf("La partie commence ! \n\n\n");
-			afficherGrille(maGrille); // Affichage de la grille pour dÃ©buter la partie
-			Play(nbRows, nbCols, maGrille); // On dÃ©marre la partie en demandant au joueur de choisir oÃ¹ jouer, la mÃ©thode est rÃ©cursive
+			afficherGrille(maGrille); // Affichage de la grille pour débuter la partie
+			Play(nbRows, nbCols, maGrille); // On démarre la partie en demandant au joueur de choisir où jouer, la méthode est récursive
 		}
 	}
 	else

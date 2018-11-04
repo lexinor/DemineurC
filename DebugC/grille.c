@@ -20,19 +20,19 @@ Liste *initialisation(int _nbRow, int _nbCol)
 	element->numCase = 1;
 	element->suivant = NULL;
 
-	grille->premier = element; // le premier element de la grille est element que l'on vient de crÃ©er
-	grille->dernier = element; // le dernier element de la grille est element que l'on vient de crÃ©er
-	grille->nbRow = _nbRow;    // On rÃ©cupÃ¨re le nombre de ligne que l'utilisateur Ã  choisi et on l'insert dans les infos de la Grille
-	grille->nbCol = _nbCol;    // On rÃ©cupÃ¨re le nombre de colonnes que l'utilisateur Ã  choisi et on l'insert dans les infos de la Grille
-	grille->nbCases = 1;       // On met le nombre de case de la grille Ã©gale Ã  1 car on vient de crÃ©er une case
+	grille->premier = element; // le premier element de la grille est element que l'on vient de créer
+	grille->dernier = element; // le dernier element de la grille est element que l'on vient de créer
+	grille->nbRow = _nbRow;    // On récupère le nombre de ligne que l'utilisateur à choisi et on l'insert dans les infos de la Grille
+	grille->nbCol = _nbCol;    // On récupère le nombre de colonnes que l'utilisateur à choisi et on l'insert dans les infos de la Grille
+	grille->nbCases = 1;       // On met le nombre de case de la grille égale à 1 car on vient de créer une case
 
 	return grille;
 }
 
 int isMined()
 {
-	int random = rand() % 100; // alÃ©atoire entre 0 et 100;
-	if (random > 50)           // si > Ã  50 on dit qu'il y a une mine
+	int random = rand() % 100; // aléatoire entre 0 et 100;
+	if (random > 50)           // si > à 50 on dit qu'il y a une mine
 	{
 		return 1;
 	}
@@ -57,14 +57,14 @@ void insertionFin(Liste *grille, int _row, int _col, char _statut, int _mine)
 	nouvelleCase->suivant = NULL;
 
 	
-	grille->dernier->suivant = nouvelleCase; // On change le NULL du dernier Ã©lement de la liste et on le fait pointer sur notre Ã©lement
-	grille->dernier = nouvelleCase; // Le dernier Ã©lÃ©ment est Ã©gal Ã  notre Ã©lement
-	grille->nbCases++; // augmente le compteur d'Ã©lement de la liste de 1
+	grille->dernier->suivant = nouvelleCase; // On change le NULL du dernier élement de la liste et on le fait pointer sur notre élement
+	grille->dernier = nouvelleCase; // Le dernier élément est égal à notre élement
+	grille->nbCases++; // augmente le compteur d'élement de la liste de 1
 }
 
-void insertionDebut(Liste *grille, int _row, int _col, char _statut, int _mine) // Insertion d'un Ã©lÃ©ment au dÃ©but de la grille
+void insertionDebut(Liste *grille, int _row, int _col, char _statut, int _mine) // Insertion d'un élément au début de la grille
 {
-	/* CrÃ©ation du nouvelle case */
+	/* Création du nouvelle case */
 	Element *nouvelleCase = malloc(sizeof(*nouvelleCase));
 	if (grille == NULL || nouvelleCase == NULL)
 	{
@@ -77,13 +77,13 @@ void insertionDebut(Liste *grille, int _row, int _col, char _statut, int _mine) 
 	nouvelleCase->mine = _mine;
 	nouvelleCase->numCase = grille->nbCases + 1;
 
-	/* Insertion de l'Ã©lement au dÃ©but de la liste */
+	/* Insertion de l'élement au début de la liste */
 	nouvelleCase->suivant = grille->premier;
 	grille->premier = nouvelleCase;
-	grille->nbCases++; // augmente le compteur d'Ã©lement de la liste de 1
+	grille->nbCases++; // augmente le compteur d'élement de la liste de 1
 }
 
-void afficherGrille(Liste *grille) // GÃ¨re l'affichage de la grille
+void afficherGrille(Liste *grille) // Gère l'affichage de la grille
 {
 	if (grille == NULL)
 	{
@@ -99,15 +99,15 @@ void afficherGrille(Liste *grille) // GÃ¨re l'affichage de la grille
 		case 'c':
 			if (actuel->suivant != NULL)
 			{
-				if (actuel->row < actuel->suivant->row) // Si la case d'aprÃ¨s est sur une autre ligne on fait un retour Ã  la ligne
+				if (actuel->row < actuel->suivant->row) // Si la case d'après est sur une autre ligne on fait un retour à la ligne
 				{
-					printf("|%d|\n", actuel->mine); // permet de tester le message de victoire en affichant oÃ¹ sont les mines [A mettre en commentaire]
+					printf("|%d|\n", actuel->mine); // permet de tester le message de victoire en affichant où sont les mines [A mettre en commentaire]
 					//printf("|%d|\n", actuel->numCase);
 				}
 				else
 				{
 					//printf("|%d|", actuel->numCase);
-					printf("|%d|", actuel->mine); // permet de tester le message de victoire en affichant oÃ¹ sont les mines [A mettre en commentaire]
+					printf("|%d|", actuel->mine); // permet de tester le message de victoire en affichant où sont les mines [A mettre en commentaire]
 				}
 			}	
 			else
@@ -118,14 +118,14 @@ void afficherGrille(Liste *grille) // GÃ¨re l'affichage de la grille
 		case 'f':
 			if (actuel->suivant != NULL)
 			{
-				if (actuel->row < actuel->suivant->row) // Si la case d'aprÃ¨s est sur une autre ligne on fait un retour Ã  la ligne
+				if (actuel->row < actuel->suivant->row) // Si la case d'après est sur une autre ligne on fait un retour à la ligne
 				{
-					printf("|F|\n", actuel->mine); // permet de tester le message de victoire en affichant oÃ¹ sont les mines [A mettre en commentaire]
+					printf("|F|\n", actuel->mine); // permet de tester le message de victoire en affichant où sont les mines [A mettre en commentaire]
 					//printf("|F|\n");
 				}
 				else
 				{
-					printf("|F|", actuel->mine); // permet de tester le message de victoire en affichant oÃ¹ sont les mines [A mettre en commentaire]
+					printf("|F|", actuel->mine); // permet de tester le message de victoire en affichant où sont les mines [A mettre en commentaire]
 					//printf("|F|");
 				}
 			}
@@ -135,7 +135,7 @@ void afficherGrille(Liste *grille) // GÃ¨re l'affichage de la grille
 			}			
 			break;
 		case 'o':
-			if (actuel->mine == 1) // Si la case ouverte est minÃ©
+			if (actuel->mine == 1) // Si la case ouverte est miné
 			{
 				printf("|X|");
 			}
@@ -144,7 +144,7 @@ void afficherGrille(Liste *grille) // GÃ¨re l'affichage de la grille
 				int nbBombes = checkForBombes(grille, actuel->row, actuel->col);
 				if (actuel->suivant != NULL)
 				{
-					if (actuel->row < actuel->suivant->row) // Si la case d'aprÃ¨s est sur une autre ligne on fait un retour Ã  la ligne
+					if (actuel->row < actuel->suivant->row) // Si la case d'après est sur une autre ligne on fait un retour à la ligne
 					{
 						printf("[-%d-]\n", nbBombes);
 					}
