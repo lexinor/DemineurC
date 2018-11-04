@@ -1,6 +1,11 @@
-﻿  grille.c
-c:\users\lexinor\source\repos\debugc\debugc\grille.c(123): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
-  c:\users\lexinor\source\repos\debugc\debugc\grille.c(123): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
-c:\users\lexinor\source\repos\debugc\debugc\grille.c(128): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
-  c:\users\lexinor\source\repos\debugc\debugc\grille.c(128): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
-  DebugC.vcxproj -> C:\Users\Lexinor\source\repos\DebugC\Debug\DebugC.exe
+﻿C:\VisualStudio2017\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: Le répertoire intermédiaire (Debug\) contient des fichiers partagés provenant d'un autre projet (DebugC.vcxproj). Cela peut entraîner un comportement de nettoyage et de régénération incorrect.
+  grille.c
+c:\users\lexinor\source\repos\demineurc\debugc\grille.c(123): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+  c:\users\lexinor\source\repos\demineurc\debugc\grille.c(123): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+c:\users\lexinor\source\repos\demineurc\debugc\grille.c(128): warning C4474: 'printf' : trop d'arguments passés pour la chaîne de format
+  c:\users\lexinor\source\repos\demineurc\debugc\grille.c(128): note: les espaces réservés et leurs paramètres attendent des arguments 0 variadiques, mais des arguments 1 ont été fournis
+  jeu.c
+  main.c
+c:\users\lexinor\source\repos\demineurc\debugc\main.c(11): warning C4244: 'fonction' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Génération de code en cours...
+  DebugC.vcxproj -> C:\Users\Lexinor\source\repos\DemineurC\Debug\DemineurC.exe
